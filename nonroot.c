@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <pwd.h>
 
+/* Print an error message and call exit() */
 void error_exit(const char *msg)
 {
     fprintf(stderr, "nonroot: %s\n", msg);
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
     if(!user) {
         error_exit("Invalid user");
     }
-    /* Paranoid extra check */
+    /* Don't allow UID/GID zero, for extra safety */
     if(user->pw_uid == 0 || user->pw_gid == 0) {
         error_exit("UID or GID is zero. Specify a non-root user.");
     }
