@@ -1,0 +1,28 @@
+.\" Process this file with
+.\" groff -man -Tascii nonroot.8
+.\"
+.TH NONROOT 8 "JUNE 2012" "nonroot" "User Manuals"
+.SH NAME
+nonroot \- run commands as non-root
+.SH SYNOPSIS
+.B nonroot
+.I user-name 
+.I executable
+.B [
+.I arg
+.B ... ]
+.SH DESCRIPTION
+.B This is a small utility for starting executables as a non-privileged user,
+when running as the superuser (e.g. in an init-script).
+
+.B The
+.I executable
+.B will be started with the specified arguments, after switching to 
+.I user-name.
+.B If anything goes wrong, nonroot exits with an error message. nonroot won't
+allow you to specify a user with UID or GID zero, to be on the safe side.
+.SH AUTHOR
+Hampus Wessman
+.SH "SEE ALSO"
+.BR su (8),
+.BR sudo (8)
