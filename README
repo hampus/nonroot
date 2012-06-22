@@ -29,8 +29,3 @@ License
 -------
 
 See the LICENSE file in the source code for the license terms.
-
-Author
-------
-
-This small utility was written by Hampus Wessman.
